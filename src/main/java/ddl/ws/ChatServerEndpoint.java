@@ -1,4 +1,4 @@
-package ddl;
+package ddl.ws;
 
 import java.io.IOException;
 import java.util.Collections;
@@ -12,8 +12,8 @@ import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.ServerEndpoint;
 
-import ddl.ChatMessage.MessageDecoder;
-import ddl.ChatMessage.MessageEncoder;
+import ddl.ws.ChatMessage.MessageDecoder;
+import ddl.ws.ChatMessage.MessageEncoder;
 
 
 

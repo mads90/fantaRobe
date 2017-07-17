@@ -1,4 +1,4 @@
-package ddl;
+package ddl.pages;
 
 
 import org.apache.wicket.ajax.AjaxRequestTarget;

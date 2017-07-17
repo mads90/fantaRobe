@@ -1,4 +1,4 @@
-package ddl;
+package ddl.utils;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.request.cycle.RequestCycle;

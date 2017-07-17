@@ -1,4 +1,4 @@
-package ddl;
+package ddl.ws;
 
 import java.io.StringReader;
 import java.util.Collections;
