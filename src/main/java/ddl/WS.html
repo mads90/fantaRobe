@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+	<head>
+		<meta charset="utf-8" />
+		<title>Corso Page</title>
+		<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:regular,bold' rel='stylesheet' type='text/css' />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="Stylesheet" />
+		<script type="text/javascript" charset="utf-8" src="jquery-1.3.2.js"></script>
+		
+		<script type="text/javascript">
+	var ws;
+	$(document).ready(
+			function() {
+				ws = new WebSocket("ws://localhost:8080/fantarobe/chat");
+				ws.onopen = function(event) {
+// 					var message = {
+// 						    "username": $('#username').val(),
+// 						    "message": "username"
+// 						}
+// 					ws.send(JSON.stringify(message));
+// 					$('#message').val('');
+				}
+				ws.onmessage = function(event) {
+					var $textarea = $('#messages');
+					var json = JSON.parse(event.data);
+					$textarea.val($textarea.val() + json.username + ": " + json.message + "\n");
+					$textarea.animate({
+						scrollTop : $textarea.height()
+					}, 1000);
+					document.title = json.message;
+				}
+				ws.onclose = function(event) {
+					
+				}
+
+	});
+	function sendMessage() {
+		var message = {
+			    "username": $('#username').val(),
+			    "message": $('#message').val() 
+			}
+		ws.send(JSON.stringify(message));
+		$('#message').val('');
+	}
+	</script>
+	</head>
+	<body>
+	
+		<div id="menu">
+			<p class="welcome">
+				User: <input id="username" value="anonymous" />
+			</p>
+			<div style="clear: both"></div>
+		</div>
+
+		<div id="chatbox">
+			<textarea id="messages" rows="16" cols="50" readonly="readonly"></textarea>
+		</div>
+
+		<form  name="message" action="">
+			<input  name="usermsg" type="text" id="message" size="63" /> 
+			<input
+				type="button" name="submitmsg" value="Send..."
+				onclick="sendMessage();" />
+		</form>
+	</body>
+</html>
