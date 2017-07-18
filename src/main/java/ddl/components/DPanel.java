@@ -11,4 +11,10 @@ public class DPanel extends Panel {
 		setOutputMarkupId(true);
 		setOutputMarkupPlaceholderTag(true);
 	}
+	@Override
+	protected void onInitialize() {
+		super.onInitialize();
+		
+        
+	}
 }

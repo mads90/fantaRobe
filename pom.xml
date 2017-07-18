@@ -54,21 +54,30 @@
 		<dependency>
 			<groupId>org.apache.wicket</groupId>
 			<artifactId>wicket-core</artifactId>
-			<version>${wicket.version}</version>
+			<version>8.0.0-M6</version>
 		</dependency>
-		<!-- OPTIONAL DEPENDENCY
-		<dependency>
-			<groupId>org.apache.wicket</groupId>
-			<artifactId>wicket-extensions</artifactId>
-			<version>${wicket.version}</version>
-		</dependency>
-		-->
-		<!-- https://mvnrepository.com/artifact/com.googlecode.wicket-jquery-ui/jquery-ui-core -->
-		<dependency>
-		    <groupId>com.googlecode.wicket-jquery-ui</groupId>
-		    <artifactId>jquery-ui-core</artifactId>
-		    <version>1.0</version>
-		</dependency>
+<!-- https://mvnrepository.com/artifact/org.apache.wicket/wicket-extensions -->
+<!-- 		<dependency> -->
+<!-- 		    <groupId>org.apache.wicket</groupId> -->
+<!-- 		    <artifactId>wicket-extensions</artifactId> -->
+<!-- 		    <version>8.0.0-M6</version> -->
+<!-- 		</dependency> -->
+			
+		<!-- https://mvnrepository.com/artifact/com.googlecode.wicket-jquery-ui/wicket-jquery-ui -->
+<!-- 		<dependency> -->
+<!-- 		    <groupId>com.googlecode.wicket-jquery-ui</groupId> -->
+<!-- 		    <artifactId>wicket-jquery-ui</artifactId> -->
+<!-- 		    <version>8.0.0-M6</version> -->
+<!-- 		    <scope>provided</scope> -->
+<!-- 		</dependency> -->
+		<!-- https://mvnrepository.com/artifact/com.googlecode.wicket-jquery-ui/wicket-kendo-ui -->
+			<dependency>
+			    <groupId>com.googlecode.wicket-jquery-ui</groupId>
+			    <artifactId>wicket-kendo-ui</artifactId>
+			    <version>8.0.0-M6</version>
+			    <scope>provided</scope>
+			</dependency>
+		
 		
 		<dependency>
 			<groupId>javax</groupId>
