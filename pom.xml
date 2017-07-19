@@ -71,13 +71,12 @@
 <!-- 		    <scope>provided</scope> -->
 <!-- 		</dependency> -->
 		<!-- https://mvnrepository.com/artifact/com.googlecode.wicket-jquery-ui/wicket-kendo-ui -->
-			<dependency>
-			    <groupId>com.googlecode.wicket-jquery-ui</groupId>
-			    <artifactId>wicket-kendo-ui</artifactId>
-			    <version>8.0.0-M6</version>
-			    <scope>provided</scope>
-			</dependency>
-		
+<!-- 			<dependency> -->
+<!-- 			    <groupId>com.googlecode.wicket-jquery-ui</groupId> -->
+<!-- 			    <artifactId>wicket-kendo-ui</artifactId> -->
+<!-- 			    <version>8.0.0-M6</version> -->
+<!-- 			    <scope>provided</scope> -->
+<!-- 			</dependency> -->
 		
 		<dependency>
 			<groupId>javax</groupId>

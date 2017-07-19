@@ -3,7 +3,7 @@ package ddl;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.protocol.http.WebApplication;
 
-import ddl.pages.WS;
+import ddl.test.WSTarget;
 
 /**
  * Application object for your web application.
@@ -19,7 +19,7 @@ public class WicketApplication extends WebApplication
 	@Override
 	public Class<? extends WebPage> getHomePage()
 	{
-		return WS.class;
+		return WSTarget.class;
 	}
 
 	/**

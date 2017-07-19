@@ -28,13 +28,15 @@
 				type="button" name="submitmsg" value="Send..."
 				onclick="sendMessage();" />
 				<label wicket:id="label" id="label"></label>
+				<label wicket:id="labella" id="labella"></label>
 		</form>
 		
 	</body>
 	<script type="text/javascript">
 		Wicket.Event.add('label1', "click", function(event) { 
 //         alert('Callback will follow!');
-        var dataForServer='From client with love.';
+//         var dataForServer='From client with love.';
+        var dataForServer='prova altro mess';
         var attrs = {"u":"./?0-2.IBehaviorListener.0-label","c":"label1","m":"POST"};
         var params = {'dataForServer': dataForServer};
         attrs.ep = params;
@@ -43,6 +45,7 @@
 	</script>
 	<script type="text/javascript">
 	var ws;
+	var mess;
 	$(document).ready(
 			function() {
 				ws = new WebSocket("ws://localhost:8080/fantarobe/chat");
@@ -62,6 +65,7 @@
 						scrollTop : $textarea.height()
 					}, 1000);
 					document.title = json.message;
+					mess = json.message;
 						$( "#label" ).trigger( "click" );
 				}
 				ws.onclose = function(event) {

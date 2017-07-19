@@ -35,29 +35,48 @@ import ddl.ws.ChatMessage;
 import ddl.ws.ChatMessage.MessageDecoder;
 import ddl.ws.ChatMessage.MessageEncoder;
 
-public  class WSInternalPage extends WebPage {
+public  class WSTarget extends WebPage {
 	private static final long serialVersionUID = 1L;
-	  private String value = "Hello World";
+	  private String value = "";
+	  private String value2 = "Pippo";
 	  int i=0;
-	public WSInternalPage(final PageParameters parameters) {
+	public WSTarget(final PageParameters parameters) {
 		super(parameters);
 		 Form<Void> form = new Form("form");
 		
-		 final Label label = new Label("label", new PropertyModel(WSInternalPage.this, "value"));
+		 final Label label = new Label("label", new PropertyModel(WSTarget.this, "value"));
          label.setOutputMarkupId(true);
          label.setOutputMarkupPlaceholderTag(true);
+         final Label labella = new Label("labella", new PropertyModel(WSTarget.this, "value2"));
+         labella.setOutputMarkupId(true);
+         labella.setOutputMarkupPlaceholderTag(true);
          form.add(label);
+         form.add(labella);
          add(form);
 
          label.add(new DemoCallback(){
              @Override
              protected void onCallback(String fromClient, AjaxRequestTarget target) {
             	 i++;
-                 value = fromClient+i;
-                 
-                 target.add(label);
+            	 String one = "ciao";
+            	 String two = "Pluto";
+            	 value = one;
+            	 value2= two;
+                 value = value+i;
+                 value2= value2+i;
+                 target.add( labella);
              }
-         }); 
+         });
+//         label.setVisible(false);
+//         labella.add(new DemoCallback(){
+//             @Override
+//             protected void onCallback(String fromClient, AjaxRequestTarget target) {
+//            	 i++;
+//                 value = fromClient+i;
+//                 
+//                 target.add(labella);
+//             }
+//         }); 
      
     }
 	 class DemoCallback extends AbstractDefaultAjaxBehavior {
